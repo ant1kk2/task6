@@ -10,10 +10,10 @@ btn1.addEventListener("click", () => {
   let maxValue = numbers[0];
   let maxValueIndex = 0;
   let countOfNegativeElements = 0;
-  let countOfOddElements = 0;
-  let countOfEvenElements = 0;
-  let sumOfEvenElements = 0;
-  let sumOfOddElements = 0;
+  let countOfOddPositiveElements = 0;
+  let countOfEvenPositiveElements = 0;
+  let sumOfEvenPositiveElements = 0;
+  let sumOfOddPositiveElements = 0;
   let mulOfPositiveElements = 1;
 
   for (const num of numbers) {
@@ -25,13 +25,13 @@ btn1.addEventListener("click", () => {
     if (num < 0) {
       countOfNegativeElements++;
     }
-    if (num % 2 !== 0) {
-      countOfOddElements++;
-      sumOfOddElements += num;
+    if (num % 2 !== 0 && num > 0) {
+      countOfOddPositiveElements++;
+      sumOfOddPositiveElements += num;
     }
-    if (num % 2 === 0) {
-      countOfEvenElements++;
-      sumOfEvenElements += num;
+    if (num % 2 === 0 && num > 0) {
+      countOfEvenPositiveElements++;
+      sumOfEvenPositiveElements += num;
     }
     if (maxValue < num) {
       maxValue = num;
@@ -45,10 +45,10 @@ btn1.addEventListener("click", () => {
 Максимальний елемент - ${maxValue}
 Порядковий номер максимального елемента - ${maxValueIndex + 1}
 Кількість негативних елементів - ${countOfNegativeElements}
-Кількість непарних позитивних елементів = ${countOfOddElements}
-Кількість парних позитивних елементів = ${countOfEvenElements}
-Сума парних позитивних елементів = ${sumOfEvenElements}
-Сума непарних позитивних елементів = ${sumOfOddElements}
+Кількість непарних позитивних елементів = ${countOfOddPositiveElements}
+Кількість парних позитивних елементів = ${countOfEvenPositiveElements}
+Сума парних позитивних елементів = ${sumOfEvenPositiveElements}
+Сума непарних позитивних елементів = ${sumOfOddPositiveElements}
 Добуток позитивних елементів = ${mulOfPositiveElements}
 `);
 });
